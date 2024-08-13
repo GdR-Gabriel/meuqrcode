@@ -1,0 +1,182 @@
+body {
+    background-color: #e9ecef;
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.chat-container {
+    background-color: #ffffff;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 80vh; /* Ajusta a altura do contêiner, mas deixa espaço para rolar */
+    overflow: hidden; /* Evita a rolagem do contêiner principal */
+}
+
+.profile {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.profile-pic {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid #007bff;
+    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
+}
+
+.chat {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    flex: 1;
+    overflow-y: auto; /* Permite rolar se o conteúdo exceder a altura disponível */
+    padding-right: 10px; /* Espaço para a barra de rolagem */
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    border-radius: 15px;
+    max-width: 80%;
+    align-self: flex-start;
+    opacity: 0;
+    font-size: 1rem;
+    line-height: 1.5;
+    box-shadow: 0 3px 10px rgba(0, 123, 255, 0.2);
+    transform: translateY(20px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.message img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.bot .message {
+    background-color: #007bff;
+}
+
+.user .message {
+    background-color: #f1f1f1;
+    color: #333333;
+    align-self: flex-end;
+}
+
+.choices {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px; /* Espaço acima dos botões */
+    margin-bottom: 20px; /* Espaço abaixo dos botões para evitar que fiquem colados no fundo */
+    display: none; /* Inicialmente oculto */
+    position: relative; /* Permite ajustes finos */
+}
+
+.choices button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.choices button:hover {
+    background-color: #0056b3;
+}
+
+.name-input {
+    margin-top: 20px;
+    display: none; /* Inicialmente oculto */
+    text-align: center;
+}
+
+.name-input input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    width: 100%;
+}
+
+.name-input button {
+    margin-top: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+.name-input button:hover {
+    background-color: #0056b3;
+}
+
+.end-button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 20px;
+    display: block;
+    width: 100%;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.end-button:hover {
+    background-color: #0056b3;
+}
+/* Estilo para a mensagem do bot */
+.message.bot {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 10px;
+}
+
+.message-content {
+    display: flex;
+    align-items: flex-start;
+}
+
+.message-img {
+    width: 50px; /* Ajuste conforme necessário */
+    height: 50px; /* Ajuste conforme necessário */
+    margin-right: 10px; /* Espaçamento entre a imagem e o texto */
+    border-radius: 50%; /* Torna a imagem circular, se desejar */
+}
+
+.message-text {
+    font-family: Arial, sans-serif; /* Ajuste a fonte conforme necessário */
+    font-size: 14px; /* Ajuste o tamanho da fonte conforme necessário */
+    line-height: 1.5; /* Ajuste o espaçamento entre linhas */
+}
